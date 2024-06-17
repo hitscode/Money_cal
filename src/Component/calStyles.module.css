@@ -10,53 +10,66 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh; /* Use min-height for full viewport height */
+  min-height: 100vh; /* Full viewport height */
   background-color: #f0f0f0;
 }
 
+.background1 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../assets/background.jpg");
+  background-size: cover; /* Cover for responsive background */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.background1::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 .moneyTemp {
-  position: relative; /* Changed to relative */
+  position: relative;
   width: 90%; /* Adjusted width for better responsiveness */
-  max-width: 500px; /* Limit width for larger screens */
+  max-width: 800px; /* Limit width for larger screens */
   padding: 20px;
   text-align: center;
   color: #fff;
-  background: rgba(
-    0,
-    0,
-    0,
-    0.6
-  ); /* Adjusted background transparency for readability */
-  border-radius: 10px; /* Rounded corners for container */
-  margin-top: 20px; /* Increased margin for better separation */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Added subtle shadow */
+  background: rgba(0, 0, 0, 0.6); /* Adjusted background transparency */
+  border-radius: 10px; /* Rounded corners */
+  margin-top: 20px; /* Increased margin */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Added shadow */
 }
 
 h2 {
-  font-size: 24px; /* Reduced font size for smaller screens */
+  font-size: 30px; /* Header font size */
   color: #fff;
-  margin-bottom: 15px; /* Increased margin for better spacing */
+  margin-bottom: 20px; /* Margin bottom for spacing */
 }
 
 .template {
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  align-items: center;
   justify-content: space-between; /* Spacing between elements */
-  margin-bottom: 10px; /* Adjusted margin for spacing */
+  margin-bottom: 10px; /* Margin for spacing */
 }
 
 .notes,
 .notesResult {
   flex: 1; /* Flex to occupy remaining space */
-  width: 40%; /* Adjusted width for smaller screens */
   max-width: 120px; /* Limit width for input fields */
   height: 35px;
-  font-size: 14px; /* Reduced font size for smaller screens */
+  font-size: 16px; /* Font size */
   text-align: center;
   border-radius: 8px;
   background: #fff6e9;
   color: #000;
-  padding: 8px; /* Reduced padding for compactness */
+  padding: 8px; /* Padding */
   border: none;
   outline: none;
 }
@@ -66,21 +79,20 @@ h2 {
 }
 
 .label {
-  font-size: 14px; /* Reduced font size for labels on smaller screens */
+  font-size: 16px; /* Label font size */
   flex: 1; /* Flex for label alignment */
 }
 
 .Result {
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
   align-items: center;
   justify-content: space-between; /* Spacing between elements */
-  margin-top: 15px; /* Increased margin for spacing */
+  margin-top: 15px; /* Margin top for spacing */
 }
 
 .clrbtn {
-  width: 90%; /* Adjusted width for better responsiveness */
-  max-width: 300px; /* Limit max width for larger screens */
+  width: 100%; /* Full width button */
+  max-width: 300px; /* Limit max width */
   height: 50px;
   border: none;
   outline: none;
@@ -90,8 +102,9 @@ h2 {
   position: relative;
   z-index: 0;
   border-radius: 10px;
-  margin-top: 30px; /* Increased margin for better separation */
-  overflow: hidden; /* Ensure overflow hidden for gradient effect */
+  margin-top: 30px; /* Margin top for spacing */
+  overflow: hidden; /* Overflow hidden for gradient effect */
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .clrbtn:before {
@@ -117,7 +130,7 @@ h2 {
   height: 200%;
   transition: all 0.5s;
   transform: rotate(30deg); /* Rotated gradient */
-  opacity: 0.5; /* Reduced opacity for subtlety */
+  opacity: 0.5; /* Reduced opacity */
   border-radius: 10px;
 }
 
@@ -126,33 +139,31 @@ h2 {
 }
 
 .clrbtn:hover {
-  color: #000;
+  background-color: #1a1a1a; /* Darkened background on hover */
+  transform: scale(1.05); /* Slightly scale up on hover */
 }
 
 @media (max-width: 768px) {
-  .moneyTemp {
-    padding: 15px; /* Adjusted padding for smaller screens */
-  }
-
-  h2 {
-    font-size: 20px; /* Reduced font size for smaller screens */
-    margin-bottom: 10px; /* Adjusted margin for better spacing */
-  }
-
   .template {
-    flex-direction: column; /* Stacked layout for smaller screens */
+    flex-direction: row; /* Stacked layout for smaller screens */
   }
 
   .notes,
   .notesResult {
     width: 100%; /* Full width for input fields on smaller screens */
-    max-width: none; /* No max-width for input fields */
-    margin-bottom: 10px; /* Adjusted margin for better spacing */
+    margin-bottom: 10px; /* Margin bottom for spacing */
+  }
+
+  .moneyTemp {
+    padding: 15px; /* Adjusted padding */
+  }
+
+  h2 {
+    font-size: 24px; /* Reduced font size for smaller screens */
+    margin-bottom: 15px; /* Margin bottom for spacing */
   }
 
   .clrbtn {
-    width: 100%; /* Full width button on smaller screens */
-    max-width: none; /* No max-width for button */
-    margin-top: 25px; /* Adjusted margin for better spacing */
+    margin-top: 20px; /* Adjusted margin top */
   }
 }
