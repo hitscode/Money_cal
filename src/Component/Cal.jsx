@@ -1,4 +1,5 @@
 import { useState } from "react";
+import numberToWords from "number-to-words";
 import styles from "./calStyles.module.css";
 
 function Cal() {
@@ -13,6 +14,7 @@ function Cal() {
   const [total, setTotal] = useState(0);
   const [expected, setExpected] = useState(0);
   const [difference, setDifference] = useState(0);
+  const [totalInWords, setTotalInWords] = useState("");
 
   // Handle change in denomination input
   const handleChange = (denomination, event) => {
@@ -22,6 +24,7 @@ function Cal() {
       const newTotal = calculateTotal(newValues);
       setTotal(newTotal);
       setDifference(newTotal - expected); // Calculate difference here
+      setTotalInWords(convertToWords(newTotal)); // Convert total to words
       return newValues;
     });
   };
@@ -40,12 +43,18 @@ function Cal() {
     }, 0);
   };
 
+  // Convert number to words
+  const convertToWords = (number) => {
+    return numberToWords.toWords(number);
+  };
+
   // Clear all input values and reset state
   const clearValues = () => {
     setValues(initialState);
     setTotal(0);
     setExpected(0);
     setDifference(0);
+    setTotalInWords("");
   };
 
   return (
@@ -108,6 +117,22 @@ function Cal() {
             readOnly
           />
         </div>
+
+        {/* Total in Words */}
+        {totalInWords && (
+          <div className={styles.Result}>
+            <label className={styles.notesvalue}>Total in Words</label>
+            <label>🟰</label>
+            <input
+              type="text"
+              placeholder="Zero"
+              className={styles.notesResult}
+              value={totalInWords}
+              readOnly
+            />
+          </div>
+        )}
+
         <button type="button" className={styles.clrbtn} onClick={clearValues}>
           Clear All Values
         </button>
