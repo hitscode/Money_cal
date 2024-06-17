@@ -10,7 +10,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh; /* Full viewport height */
+  min-height: 100vh;
   background-color: #f0f0f0;
 }
 
@@ -19,7 +19,7 @@
   width: 100%;
   height: 100vh;
   background-image: url("../assets/background.jpg");
-  background-size: cover; /* Cover for responsive background */
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -35,64 +35,64 @@
 
 .moneyTemp {
   position: relative;
-  width: 90%; /* Adjusted width for better responsiveness */
-  max-width: 800px; /* Limit width for larger screens */
+  width: 90%;
+  max-width: 800px;
   padding: 20px;
   text-align: center;
   color: #fff;
-  background: rgba(0, 0, 0, 0.6); /* Adjusted background transparency */
-  border-radius: 10px; /* Rounded corners */
-  margin-top: 20px; /* Increased margin */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Added shadow */
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 h2 {
-  font-size: 30px; /* Header font size */
+  font-size: 30px;
   color: #fff;
-  margin-bottom: 20px; /* Margin bottom for spacing */
+  margin-bottom: 20px;
 }
 
 .template {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Spacing between elements */
-  margin-bottom: 10px; /* Margin for spacing */
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .notes,
 .notesResult {
-  flex: 1; /* Flex to occupy remaining space */
-  max-width: 120px; /* Limit width for input fields */
+  flex: 1;
+  max-width: 120px;
   height: 35px;
-  font-size: 16px; /* Font size */
+  font-size: 16px;
   text-align: center;
   border-radius: 8px;
   background: #fff6e9;
   color: #000;
-  padding: 8px; /* Padding */
+  padding: 8px;
   border: none;
   outline: none;
 }
 
 .notesResult {
-  max-width: 150px; /* Adjusted max-width for result fields */
+  max-width: 150px;
 }
 
 .label {
-  font-size: 16px; /* Label font size */
-  flex: 1; /* Flex for label alignment */
+  font-size: 16px;
+  flex: 1;
 }
 
 .Result {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Spacing between elements */
-  margin-top: 15px; /* Margin top for spacing */
+  justify-content: space-between;
+  margin-top: 15px;
 }
 
 .clrbtn {
-  width: 100%; /* Full width button */
-  max-width: 300px; /* Limit max width */
+  width: 100%;
+  max-width: 300px;
   height: 50px;
   border: none;
   outline: none;
@@ -102,8 +102,8 @@ h2 {
   position: relative;
   z-index: 0;
   border-radius: 10px;
-  margin-top: 30px; /* Margin top for spacing */
-  overflow: hidden; /* Overflow hidden for gradient effect */
+  margin-top: 30px;
+  overflow: hidden;
   transition: background-color 0.3s, transform 0.3s;
 }
 
@@ -129,41 +129,41 @@ h2 {
   width: 200%;
   height: 200%;
   transition: all 0.5s;
-  transform: rotate(30deg); /* Rotated gradient */
-  opacity: 0.5; /* Reduced opacity */
+  transform: rotate(30deg);
+  opacity: 0.5;
   border-radius: 10px;
 }
 
 .clrbtn:hover:before {
-  background-position: right bottom; /* Adjusted hover position */
+  background-position: right bottom;
 }
 
 .clrbtn:hover {
-  background-color: #1a1a1a; /* Darkened background on hover */
-  transform: scale(1.05); /* Slightly scale up on hover */
+  background-color: #1a1a1a;
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
   .template {
-    flex-direction: row; /* Stacked layout for smaller screens */
+    flex-direction: row;
   }
 
   .notes,
   .notesResult {
-    width: 100%; /* Full width for input fields on smaller screens */
-    margin-bottom: 10px; /* Margin bottom for spacing */
+    width: 100%;
+    margin-bottom: 10px;
   }
 
   .moneyTemp {
-    padding: 15px; /* Adjusted padding */
+    padding: 15px;
   }
 
   h2 {
-    font-size: 24px; /* Reduced font size for smaller screens */
-    margin-bottom: 15px; /* Margin bottom for spacing */
+    font-size: 24px;
+    margin-bottom: 15px;
   }
 
   .clrbtn {
-    margin-top: 20px; /* Adjusted margin top */
+    margin-top: 20px;
   }
 }

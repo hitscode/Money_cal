@@ -30,7 +30,7 @@ function Cal() {
   const handleExpectedChange = (event) => {
     const value = Number(event.target.value) || 0;
     setExpected(value);
-    setDifference(total - value); // Calculate difference as expected - total
+    setDifference(total - value);
   };
 
   // Calculate total amount based on current values
