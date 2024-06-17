@@ -13,6 +13,7 @@
   min-height: 100vh;
   background-color: #f0f0f0;
 }
+
 .moneyTemp {
   position: relative;
   width: 90%;
@@ -68,6 +69,19 @@ h2 {
   align-items: center;
   justify-content: space-between;
   margin-top: 15px;
+}
+
+.resultInWords {
+  flex: 1;
+  height: 35px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 8px;
+  background: #fff6e9;
+  color: #000;
+  padding: 8px;
+  border: none;
+  outline: none;
 }
 
 .clrbtn {
@@ -129,7 +143,8 @@ h2 {
   }
 
   .notes,
-  .notesResult {
+  .notesResult,
+  .resultInWords {
     width: 100%;
     margin-bottom: 10px;
   }
