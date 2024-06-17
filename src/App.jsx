@@ -1,9 +1,9 @@
 // import { useState } from 'react'
-import calculator from "./Component/Cal";
+import Calculator from "./Component/Cal";
 function App() {
   return (
     <div>
-      <calculator></calculator>
+      <Calculator></Calculator>
     </div>
   );
 }

@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.calContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Use min-height for full viewport height */
+  background-color: #f0f0f0;
+}
+
+.moneyTemp {
+  position: relative; /* Changed to relative */
+  width: 90%; /* Adjusted width for better responsiveness */
+  max-width: 500px; /* Limit width for larger screens */
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.6
+  ); /* Adjusted background transparency for readability */
+  border-radius: 10px; /* Rounded corners for container */
+  margin-top: 20px; /* Increased margin for better separation */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Added subtle shadow */
+}
+
+h2 {
+  font-size: 24px; /* Reduced font size for smaller screens */
+  color: #fff;
+  margin-bottom: 15px; /* Increased margin for better spacing */
+}
+
+.template {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  justify-content: space-between; /* Spacing between elements */
+  margin-bottom: 10px; /* Adjusted margin for spacing */
+}
+
+.notes,
+.notesResult {
+  flex: 1; /* Flex to occupy remaining space */
+  width: 40%; /* Adjusted width for smaller screens */
+  max-width: 120px; /* Limit width for input fields */
+  height: 35px;
+  font-size: 14px; /* Reduced font size for smaller screens */
+  text-align: center;
+  border-radius: 8px;
+  background: #fff6e9;
+  color: #000;
+  padding: 8px; /* Reduced padding for compactness */
+  border: none;
+  outline: none;
+}
+
+.notesResult {
+  max-width: 150px; /* Adjusted max-width for result fields */
+}
+
+.label {
+  font-size: 14px; /* Reduced font size for labels on smaller screens */
+  flex: 1; /* Flex for label alignment */
+}
+
+.Result {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  align-items: center;
+  justify-content: space-between; /* Spacing between elements */
+  margin-top: 15px; /* Increased margin for spacing */
+}
+
+.clrbtn {
+  width: 90%; /* Adjusted width for better responsiveness */
+  max-width: 300px; /* Limit max width for larger screens */
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  margin-top: 30px; /* Increased margin for better separation */
+  overflow: hidden; /* Ensure overflow hidden for gradient effect */
+}
+
+.clrbtn:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  background-size: 300% 300%;
+  z-index: -1;
+  width: 200%;
+  height: 200%;
+  transition: all 0.5s;
+  transform: rotate(30deg); /* Rotated gradient */
+  opacity: 0.5; /* Reduced opacity for subtlety */
+  border-radius: 10px;
+}
+
+.clrbtn:hover:before {
+  background-position: right bottom; /* Adjusted hover position */
+}
+
+.clrbtn:hover {
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .moneyTemp {
+    padding: 15px; /* Adjusted padding for smaller screens */
+  }
+
+  h2 {
+    font-size: 20px; /* Reduced font size for smaller screens */
+    margin-bottom: 10px; /* Adjusted margin for better spacing */
+  }
+
+  .template {
+    flex-direction: column; /* Stacked layout for smaller screens */
+  }
+
+  .notes,
+  .notesResult {
+    width: 100%; /* Full width for input fields on smaller screens */
+    max-width: none; /* No max-width for input fields */
+    margin-bottom: 10px; /* Adjusted margin for better spacing */
+  }
+
+  .clrbtn {
+    width: 100%; /* Full width button on smaller screens */
+    max-width: none; /* No max-width for button */
+    margin-top: 25px; /* Adjusted margin for better spacing */
+  }
+}
