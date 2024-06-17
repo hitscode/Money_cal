@@ -21,7 +21,7 @@ function Cal() {
       const newValues = { ...prevValues, [denomination]: value };
       const newTotal = calculateTotal(newValues);
       setTotal(newTotal);
-      setDifference(expected - newTotal); // Calculate difference here
+      setDifference(newTotal - expected); // Calculate difference here
       return newValues;
     });
   };
